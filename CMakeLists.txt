@@ -6,7 +6,6 @@ find_package(Protobuf REQUIRED)
 
 # Generate the .h and .cxx files
 file(GLOB_RECURSE PROTO_FILES *.proto)
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/_gen)
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_FILES})
 
 add_library(lib${COMPONENT_NAME} STATIC
