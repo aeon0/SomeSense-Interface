@@ -2,7 +2,9 @@ cmake_minimum_required(VERSION 3.16)
 set(COMPONENT_NAME "interface")
 
 set(CMAKE_STATIC_LIBRARY_PREFIX "")
+if(NOT Protobuf_FOUND)
 find_package(Protobuf REQUIRED)
+endif()
 
 # Generate the .h and .cxx files
 file(GLOB_RECURSE PROTO_FILES *.proto)
