@@ -1,4 +1,5 @@
 syntax = "proto3";
+package proto;
 
 message RuntimeMeas {
   string name = 1;

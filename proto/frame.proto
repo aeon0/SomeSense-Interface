@@ -1,26 +1,26 @@
 syntax = "proto3";
+package proto;
 
 import "types.proto";
 import "scheduler.proto";
 import "inference.proto";
 
 
-message CapnpOutput {
-  message CamSensor {
-    int32 idx = 1;
-    string key = 2;
-    int64 timestamp = 3; // timestamp in [us]
-    Img img = 4;
-    CamCalibration calib = 5;
-  }
-
-  message Frame {
-    int32 versionMajor = 1; // major interface version, should always be increased once breaking changes happen
-    int32 versionMinor = 2; // minor interface version, should always be increase for non breaking changes
-    int64 timestamp = 3; // from the start of the app in [us]
-    float plannedFrameLength = 4; // planned length of the frame in [ms]
-    int64 frameCount = 5;
-    repeated RuntimeMeas runtimeMeas = 6;
-    repeated CamSensor camSensors = 7;
-  }
+message CamSensor {
+  int32 idx = 1;
+  string key = 2;
+  int64 timestamp = 3; // timestamp in [us]
+  Img img = 4;
+  CamCalibration calib = 5;
 }
+
+message Frame {
+  int32 versionMajor = 1; // major interface version, should always be increased once breaking changes happen
+  int32 versionMinor = 2; // minor interface version, should always be increase for non breaking changes
+  int64 timestamp = 3; // from the start of the app in [us]
+  float plannedFrameLength = 4; // planned length of the frame in [ms]
+  int64 frameCount = 5;
+  repeated RuntimeMeas runtimeMeas = 6;
+  repeated CamSensor camSensors = 7;
+}
+
