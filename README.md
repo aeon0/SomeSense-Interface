@@ -1,10 +1,9 @@
-# Shared Interace in Capnp Proto
+# Shared Interace in Protobuf
 
 ## Dependencies
-Capnp Proto must be installed: https://capnproto.org/install.html
 ```bash
-# install capnp
-bash install_dependencies.sh
+# install dependencies
+sudo apt install cmake g++ libprotobuf-dev protobuf-compiler
 
 # build
 mkdir build

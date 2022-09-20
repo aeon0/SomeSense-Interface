@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message RuntimeMeas {
+  string name = 1;
+  int64 start = 2; // start timestamp in [us]
+  double duration = 3; // in [ms]
+}
