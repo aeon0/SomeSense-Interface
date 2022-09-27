@@ -7,7 +7,7 @@ import "inference.proto";
 
 
 message CamSensor {
-  int32 idx = 1;
+  bool isValid = 1;
   string key = 2;
   int64 timestamp = 3; // timestamp in [us]
   Img img = 4;
@@ -22,5 +22,8 @@ message Frame {
   int64 frameCount = 5;
   repeated RuntimeMeas runtimeMeas = 6;
   repeated CamSensor camSensors = 7;
-}
 
+  // Rec stuff
+  bool isRec = 16;
+  RecData recData = 17;
+}

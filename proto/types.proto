@@ -7,6 +7,11 @@ message Point {
   float z = 3;
 }
 
+message RecData {
+  bool recLength = 1;
+  bool isPlaying = 2;
+}
+
 message CamCalibration {
   // Extrinsics
   float x = 1; // in [m] autosar, bumper coordinates
