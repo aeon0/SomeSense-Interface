@@ -2,7 +2,6 @@ syntax = "proto3";
 package proto;
 
 import "types.proto";
-import "scheduler.proto";
 import "inference.proto";
 
 

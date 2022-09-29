@@ -12,6 +12,12 @@ message RecData {
   bool isPlaying = 2;
 }
 
+message RuntimeMeas {
+  string name = 1;
+  int64 start = 2; // start timestamp in [us]
+  double duration = 3; // in [ms]
+}
+
 message CamCalibration {
   // Extrinsics
   float x = 1; // in [m] autosar, bumper coordinates
