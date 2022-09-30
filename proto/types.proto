@@ -14,8 +14,9 @@ message RecData {
 
 message RuntimeMeas {
   string name = 1;
-  int64 start = 2; // start timestamp in [us]
-  double duration = 3; // in [ms]
+  int64 relStart = 2; // start timestamp in [us] relative (to app start)
+  int64 absStart = 3; // start timestamp in [us] absolute (as appStartTime in Frame)
+  double duration = 4; // in [ms]
 }
 
 message CamCalibration {

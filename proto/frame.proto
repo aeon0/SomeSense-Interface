@@ -8,19 +8,21 @@ import "inference.proto";
 message CamSensor {
   bool isValid = 1;
   string key = 2;
-  int64 timestamp = 3; // timestamp in [us] (from start of app)
-  Img img = 4;
-  CamCalibration calib = 5;
+  int64 relTs = 3; // timestamp in [us] relative (from start of app)
+  int64 absTs = 4; // timestamp in [us] absolute (as appStartTime in Frame)
+  Img img = 5;
+  CamCalibration calib = 6;
 }
 
 message Frame {
   int32 versionMajor = 1; // major interface version, should always be increased once breaking changes happen
   int32 versionMinor = 2; // minor interface version, should always be increase for non breaking changes
   int64 appStartTime = 3; // timestamp in [us] when app was started
-  int64 timestamp = 4; // timestamp in [us] (from start of app)
-  float plannedFrameLength = 5; // planned length of the frame in [ms]
-  repeated RuntimeMeas runtimeMeas = 6;
-  repeated CamSensor camSensors = 7;
+  int64 relTs = 4; // timestamp in [us] relative (from start of app)
+  int64 absTs = 5; // timestamp in [us] absolut (as appStartTime)
+  float plannedFrameLength = 6; // planned length of the frame in [ms]
+  repeated RuntimeMeas runtimeMeas = 7;
+  repeated CamSensor camSensors = 8;
 
   // Rec stuff
   bool isRec = 16;
