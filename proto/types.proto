@@ -7,11 +7,6 @@ message Point {
   float z = 3;
 }
 
-message RecData {
-  int64 recLength = 1; // rec length in [us]
-  bool isPlaying = 2;
-}
-
 message RuntimeMeas {
   string name = 1;
   int64 relStart = 2; // start timestamp in [us] relative (to app start)

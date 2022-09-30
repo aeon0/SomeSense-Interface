@@ -23,8 +23,4 @@ message Frame {
   float plannedFrameLength = 6; // planned length of the frame in [ms]
   repeated RuntimeMeas runtimeMeas = 7;
   repeated CamSensor camSensors = 8;
-
-  // Rec stuff
-  bool isRec = 16;
-  RecData recData = 17;
 }
