@@ -32,8 +32,11 @@ message Img {
   int32 width = 1; // in [px]
   int32 height = 2; // in [px]
   int32 channels = 3;
-  bytes data = 4;
-  float scale = 5; // scale with respect to input img
-  float offsetLeft = 6; // Offset from left edge in [px]
-  float offsetTop = 7; // Offset from top edge in [px]
+  int32 type = 4; // opencv type as int e.g. CV_8UC3 = 8 uchar, 3 channels
+  string typeStr = 5; // opencv type as string e.g. "CV_8UC3"
+  bytes data = 6;
+  // All with respect to input img, so 1) remove offsets 2) scale
+  float offsetLeft = 7; // Offset from left edge in [px]
+  float offsetTop = 8; // Offset from top edge in [px]
+  float scale = 9;
 }

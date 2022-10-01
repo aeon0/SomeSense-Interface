@@ -13,9 +13,13 @@ message CamSensor {
   CamCalibration calib = 5;
   repeated ObjectImg objectsImg = 6;
 
-  Img img = 12;
-  Img semsegImg = 13;
-  Img depthImg = 14;
+  Img img = 7;
+  Img semsegRaw = 8;
+  Img depthRaw = 9;
+
+  // These are basically just for visualization
+  Img semsegImg = 20;
+  Img depthImg = 21;
 }
 
 message RuntimeMeas {
