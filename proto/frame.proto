@@ -2,6 +2,7 @@ syntax = "proto3";
 package proto;
 
 import "camera.proto";
+import "common.proto";
 
 
 // Specific Datatypes in camera.proto
@@ -38,4 +39,7 @@ message Frame {
   float plannedFrameLength = 6; // planned length of the frame in [ms]
   repeated RuntimeMeas runtimeMeas = 7;
   repeated CamSensor camSensors = 8;
+
+  repeated Point obstacles = 12;
+  repeated Point laneMarkings = 13;
 }
