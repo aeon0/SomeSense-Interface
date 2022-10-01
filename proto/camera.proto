@@ -1,18 +1,6 @@
 syntax = "proto3";
 package proto;
 
-message Point {
-  float x = 1;
-  float y = 2;
-  float z = 3;
-}
-
-message RuntimeMeas {
-  string name = 1;
-  int64 relStart = 2; // start timestamp in [us] relative (to app start)
-  int64 absStart = 3; // start timestamp in [us] absolute (as appStartTime in Frame)
-  double duration = 4; // in [ms]
-}
 
 message CamCalibration {
   // Extrinsics
@@ -29,6 +17,15 @@ message CamCalibration {
   float principalPointY = 10; // in [px]
   // Pre computed helpers
   float horizon = 16; // in [px] (y-axis), 0 means invalid / not filled
+}
+
+message ObjectImg {
+  int32 cx = 1;
+  int32 cy = 2;
+  int32 objClass = 3;
+  int32 width = 4;
+  int32 height = 5;
+  float radialDist = 16;
 }
 
 message Img {

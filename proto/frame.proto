@@ -1,17 +1,28 @@
 syntax = "proto3";
 package proto;
 
-import "types.proto";
-import "inference.proto";
+import "camera.proto";
 
 
+// Specific Datatypes in camera.proto
 message CamSensor {
   bool isValid = 1;
   string key = 2;
   int64 relTs = 3; // timestamp in [us] relative (from start of app)
   int64 absTs = 4; // timestamp in [us] absolute (as appStartTime in Frame)
-  Img img = 5;
-  CamCalibration calib = 6;
+  CamCalibration calib = 5;
+  repeated ObjectImg objectsImg = 6;
+
+  Img img = 12;
+  Img semsegImg = 13;
+  Img depthImg = 14;
+}
+
+message RuntimeMeas {
+  string name = 1;
+  int64 relStart = 2; // start timestamp in [us] relative (to app start)
+  int64 absStart = 3; // start timestamp in [us] absolute (as appStartTime in Frame)
+  double duration = 4; // in [ms]
 }
 
 message Frame {
