@@ -25,8 +25,8 @@ message CamSensor {
 
 message RuntimeMeas {
   string name = 1;
-  int64 relStart = 2; // start timestamp in [us] relative (to app start)
-  int64 absStart = 3; // start timestamp in [us] absolute (as appStartTime in Frame)
+  int64 absFrameStart = 2; // start timestamp of frame in [us] 
+  int64 absStart = 3; // start timestamp of meas in [us]
   double duration = 4; // in [ms]
 }
 
