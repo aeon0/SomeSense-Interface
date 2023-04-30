@@ -1,9 +1,35 @@
 syntax = "proto3";
 package proto;
 
+message SigInfo {
+  string key = 1; // String key describing the signal origin, must be unique in the system
+  string sensorId = 2; // If the signal is "per sensor", this string identifies which sensor it belongs to, otherwise empty
+  int32 versionMajor = 3; // major interface version, should always be increased once breaking changes happen
+  int32 versionMinor = 4; // minor interface version, should always be increase for non breaking changes
+  int64 appStartTime = 5; // timestamp in [us] when app was started
+  int64 ts = 6; // timestamp in [us] absolut
+}
 
-message Point {
+message ImgRoi {
+  // All with respect to input img, so 1) remove offsets 2) scale
+  float offsetLeft = 1; // Offset from left edge in [px]
+  float offsetTop = 2; // Offset from top edge in [px]
+  float scale = 3;
+}
+
+message Point2d {
+  float x = 1;
+  float y = 2;
+}
+
+message Point3d {
   float x = 1;
   float y = 2;
   float z = 3;
+}
+
+message Rotation3d {
+  float pitch = 1;
+  float yaw = 2;
+  float roll = 3;
 }

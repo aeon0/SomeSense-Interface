@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+
+message Img {
+  SigInfo sigInfo = 1;
+  int32 width = 2; // in [px]
+  int32 height = 3; // in [px]
+  int32 channels = 4;
+  int32 type = 5; // opencv type as int e.g. CV_8UC3 = 8 uchar, 3 channels
+  string typeStr = 6; // opencv type as string e.g. "CV_8UC3"
+  ImgRoi roi = 7;
+  bytes data = 8;
+}

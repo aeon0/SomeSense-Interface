@@ -1,0 +1,18 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+
+message ObjectImg {
+  Point2d center = 1;
+  float width = 2;
+  float height = 3;
+  int32 objClass = 4;
+  float radialDist = 5;
+}
+
+message ObjectDetections {
+  SigInfo signInfo = 1;
+  ImgRoi roi = 2;
+  repeated ObjectImg objectsImg = 3;
+}

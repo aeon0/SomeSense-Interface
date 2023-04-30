@@ -1,0 +1,20 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+
+message CamCalib {
+  SigInfo sigInfo = 1;
+  // Extrinsics
+  Point3d translation = 2; // in [m] autosar, bumper coordinates
+  Rotation3d rotation = 3; // in [rad]
+  // Intrinsics
+  float focalLengthX = 4; // in [px]
+  float focalLengthY = 5; // in [px]
+  float principalPointX = 6; // in [px]
+  float principalPointY = 7; // in [px]
+  float horizontalFov = 8; // in [rad]
+  float verticalFov = 9; // in [rad]
+  // Pre computed helpers
+  float horizon = 10; // in [px] (y-axis), 0 means invalid / not filled
+}

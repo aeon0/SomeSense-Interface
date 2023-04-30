@@ -1,0 +1,16 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+
+message RuntimeMeas {
+  string name = 1;
+  int64 absFrameStart = 2; // start timestamp of frame in [us] 
+  int64 absStart = 3; // start timestamp of meas in [us]
+  double duration = 4; // in [ms]
+}
+
+message MetaData {
+  SigInfo sigInfo = 1;
+  repeated RuntimeMeas runtimeMeas = 2;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+package proto;
+
+import "common.proto";
+
+message ObjectDetections {
+  SigInfo signInfo = 1;
+  repeated Point3d obstacles = 2;
+  repeated Point3d laneMarkings = 3;
+}
